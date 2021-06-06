@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Anime Ace";
   src: url("./anime-ace.regular.ttf");
+  font-display: swap;
 }
 
 html,
