@@ -404,6 +404,7 @@
   .cm-myus-head {
     display: flex;
     flex-flow: row-reverse;
+    pointer-events: none;
   }
 
   .cm-container {
@@ -415,6 +416,7 @@
     .cm-container {
       padding-left: 100px;
       padding-right: 100px;
+      margin-bottom: -90px;
     }
   }
 
@@ -422,6 +424,7 @@
     .cm-container {
       padding-left: 200px;
       padding-right: 200px;
+      margin-bottom: -90px;
     }
   }
 
