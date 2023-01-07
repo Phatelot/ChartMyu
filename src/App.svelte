@@ -3,12 +3,13 @@
   import { getRelativePosition } from "chart.js/helpers";
 
   import { Chart as ChartJS, Title, LineElement, LinearScale, PointElement, Interaction } from "chart.js";
+  import annotationPlugin from "chartjs-plugin-annotation";
 
   import { characters } from "./data";
 
   import { BMI, BMIToCategory, toLbs, toStonesLabel } from "./weight";
 
-  ChartJS.register(Title, LineElement, PointElement, LinearScale);
+  ChartJS.register(Title, LineElement, PointElement, LinearScale, annotationPlugin);
 
   // @ts-ignore
   Interaction.modes.cmInteractionMode = function (chart, event) {
@@ -25,6 +26,16 @@
     });
     return [nearestItem];
   };
+
+  const createBMIThresholdAnnotation = (threshold) => ({
+    type: "line",
+    yMin: threshold,
+    yMax: threshold,
+    drawTime: "beforeDatasetsDraw",
+    borderWidth: 1.2,
+    borderDash: [6, 6],
+    borderDashOffset: 0,
+  });
 
   const possibleValuesToPlot = ["kg", "lbs", "BMI", "st"];
   $: valueToPlot = possibleValuesToPlot[0];
@@ -169,6 +180,18 @@
           },
         },
       },
+    },
+    plugins: {
+      annotation: {
+        BMI: {
+          annotations: {
+            healthy: createBMIThresholdAnnotation(18.5),
+            overweight: createBMIThresholdAnnotation(25),
+            obese: createBMIThresholdAnnotation(30),
+            obeseII: createBMIThresholdAnnotation(40),
+          },
+        },
+      }[valueToPlot],
     },
     onClick: onClick,
   };
