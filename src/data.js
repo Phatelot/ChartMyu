@@ -80,6 +80,11 @@ export const characters = {
         url: "https://twitter.com/pix_iveo/status/1506336501231140873/photo/1",
         weight: 95.3,
       },
+      92: {
+        page: 240,
+        url: "https://twitter.com/pix_iveo/status/1619081834595500034",
+        weight: 156.1,
+      },
     },
   },
   Ilya: {
