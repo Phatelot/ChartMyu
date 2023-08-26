@@ -152,10 +152,10 @@
         type: "linear",
         bounds: "ticks",
         suggestedMax: {
-          kg: 100,
-          lbs: toLbs(100),
-          BMI: 50,
-          st: toLbs(100),
+          kg: 150,
+          lbs: toLbs(150),
+          BMI: 55,
+          st: toLbs(150),
         }[valueToPlot],
         suggestedMin: 0,
         ticks: {
@@ -164,7 +164,7 @@
             kg: 10,
             lbs: 25,
             BMI: 5,
-            st: 21,
+            st: 28,
           }[valueToPlot],
           callback: (label) => {
             switch (valueToPlot) {
@@ -223,7 +223,14 @@
       if (!!previousWeighingsFromLastSelected) {
         const weightDifference =
           Math.round((lastSelected.weighing.weight - previousWeighingsFromLastSelected[1].weight) * 10) / 10;
-        text += ` She gained ${weightDifference} kg in the last `;
+        if (weightDifference > 0) {
+          text += ` She gained ${weightDifference} kg`;
+        } else if (weightDifference == 0) {
+          text += ` Her weight remained stable`;
+        } else {
+          text += ` She lost ${-weightDifference} kg`;
+        }
+        text += ` in the last `;
         const dayDifference = lastSelected.day - previousWeighingsFromLastSelected[0];
         text += dayDifference > 1 ? `${dayDifference} days` : `day`;
         if (atLeastSecondWeighing) {
@@ -243,7 +250,14 @@
       if (!!previousWeighingsFromLastSelected) {
         const weightDifference =
           Math.round(toLbs(lastSelected.weighing.weight - previousWeighingsFromLastSelected[1].weight) * 10) / 10;
-        text += ` She gained ${weightDifference} lbs in the last `;
+        if (weightDifference > 0) {
+          text += ` She gained ${weightDifference} lbs`;
+        } else if (weightDifference == 0) {
+          text += ` Her weight remained stable`;
+        } else {
+          text += ` She lost ${-weightDifference} lbs`;
+        }
+        text += ` in the last `;
         const dayDifference = lastSelected.day - previousWeighingsFromLastSelected[0];
         text += dayDifference > 1 ? `${dayDifference} days` : `day`;
         if (atLeastSecondWeighing) {
@@ -275,12 +289,21 @@
       } else if (BMIToCategory(previousBMI) !== lastBMICategory) {
         text += `and is now ${lastBMICategory}.`;
       } else {
-        text += `and remains ${lastBMICategory}.`;
+        text += `${previousBMI > lastBMI ? "but" : "and"} remains ${lastBMICategory}.`;
+      }
+
+      if (previousBMI === lastBMI) {
+        return text;
       }
 
       if (previousBMI && previousBMI !== lastBMI) {
         const BMIDifference = lastBMI - previousBMI;
-        text += ` She gained ${BMIDifference} BMI point${BMIDifference === 1 ? "" : "s"} in the last `;
+        if (BMIDifference > 0) {
+          text += ` She gained ${BMIDifference} BMI point${BMIDifference === 1 ? "" : "s"}`;
+        } else {
+          text += ` She lost ${-BMIDifference} BMI point${-BMIDifference === 1 ? "" : "s"}`;
+        }
+        text += ` in the last `;
         const dayDifference = lastSelected.day - previousWeighingsFromLastSelected[0];
         text += dayDifference > 1 ? `${dayDifference} days.` : `day.`;
       }
@@ -293,7 +316,14 @@
       if (!!previousWeighingsFromLastSelected) {
         const weightDifference =
           Math.round(toLbs(lastSelected.weighing.weight - previousWeighingsFromLastSelected[1].weight) * 10) / 10;
-        text += ` She gained ${toStonesLabel(weightDifference)} in the last `;
+        if (weightDifference > 0) {
+          text += ` She gained ${toStonesLabel(weightDifference)}`;
+        } else if (weightDifference == 0) {
+          text += ` Her weight remained stable`;
+        } else {
+          text += ` She lost ${toStonesLabel(-weightDifference)}`;
+        }
+        text += ` in the last `;
         const dayDifference = lastSelected.day - previousWeighingsFromLastSelected[0];
         text += dayDifference > 1 ? `${dayDifference} days` : `day`;
         if (atLeastSecondWeighing) {
