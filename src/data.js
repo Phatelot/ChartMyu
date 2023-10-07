@@ -65,6 +65,11 @@ export const characters = {
         url: "https://pbs.twimg.com/media/FMejCqFXoAIdujU?format=png&name=900x900",
         weight: 92.6,
       },
+      145: {
+        page: 320,
+        url: "https://pbs.twimg.com/media/F7y1ffQX0AAPVf8?format=png&name=900x900",
+        weight: 119.8,
+      },
     },
   },
   Nadette: {
