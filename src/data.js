@@ -44,6 +44,11 @@ export const characters = {
         url: "https://pbs.twimg.com/media/F6GPtdxWgAAwm6I?format=png&name=900x900",
         weight: 74.6,
       },
+      160: {
+        page: 362,
+        url: "https://www.deviantart.com/pixiveo/art/Log-Myu-Page-362-1026596593",
+        weight: 76,
+      },
     },
   },
   Zina: {
@@ -101,6 +106,11 @@ export const characters = {
         url: "https://twitter.com/pix_iveo/status/1619081834595500034",
         weight: 156.1,
       },
+      160: {
+        page: 366,
+        url: "https://www.deviantart.com/pixiveo/art/Log-Myu-Page-366-1032184086",
+        weight: 307,
+      },
     },
   },
   Ilya: {
@@ -140,6 +150,11 @@ export const characters = {
         page: 303,
         url: "https://pbs.twimg.com/media/F4aYrNJXMAAcleW?format=png&name=900x900",
         weight: 109,
+      },
+      160: {
+        page: 360,
+        url: "https://www.deviantart.com/pixiveo/art/Log-Myu-Page-360-1023203922",
+        weight: 112.1,
       },
     },
   },
