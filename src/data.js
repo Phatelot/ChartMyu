@@ -49,6 +49,16 @@ export const characters = {
         url: "https://www.deviantart.com/pixiveo/art/Log-Myu-Page-362-1026596593",
         weight: 76,
       },
+      175: {
+        page: 387,
+        url: "https://www.deviantart.com/pixiveo/art/Log-Myu-Page-387-1090227825",
+        weight: 76.8,
+      },
+      200: {
+        page: 432,
+        url: "https://www.deviantart.com/pixiveo/art/Log-Myu-Page-432-1158488595",
+        weight: 82.8,
+      },
     },
   },
   Zina: {
@@ -74,6 +84,16 @@ export const characters = {
         page: 320,
         url: "https://pbs.twimg.com/media/F7y1ffQX0AAPVf8?format=png&name=900x900",
         weight: 119.8,
+      },
+      175: {
+        page: 388,
+        url: "https://www.deviantart.com/pixiveo/art/Log-Myu-Page-388-1091751326",
+        weight: 132.1,
+      },
+      200: {
+        page: 437,
+        url: "https://www.deviantart.com/pixiveo/art/Log-Myu-Page-437-1165103920",
+        weight: 143.1,
       },
     },
   },
@@ -155,6 +175,11 @@ export const characters = {
         page: 360,
         url: "https://www.deviantart.com/pixiveo/art/Log-Myu-Page-360-1023203922",
         weight: 112.1,
+      },
+      190: {
+        page: 426,
+        url: "https://www.deviantart.com/pixiveo/art/Log-Myu-Page-426-1149754429",
+        weight: 117.1,
       },
     },
   },
