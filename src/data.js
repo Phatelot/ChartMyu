@@ -181,6 +181,11 @@ export const characters = {
         url: "https://www.deviantart.com/pixiveo/art/Log-Myu-Page-426-1149754429",
         weight: 117.1,
       },
+      204: {
+        page: 447,
+        url: "https://www.deviantart.com/pixiveo/art/Log-Myu-Page-447-1181353370",
+        weight: 123,
+      },
     },
   },
 };
