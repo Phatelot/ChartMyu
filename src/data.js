@@ -59,6 +59,11 @@ export const characters = {
         url: "https://www.deviantart.com/pixiveo/art/Log-Myu-Page-432-1158488595",
         weight: 82.8,
       },
+      209: {
+        page: 466,
+        url: "https://www.deviantart.com/pixiveo/art/Log-Myu-Page-466-1227916923",
+        weight: 90.5,
+      },
     },
   },
   Zina: {
