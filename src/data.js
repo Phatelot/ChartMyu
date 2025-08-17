@@ -100,6 +100,11 @@ export const characters = {
         url: "https://www.deviantart.com/pixiveo/art/Log-Myu-Page-437-1165103920",
         weight: 143.1,
       },
+      209: {
+        page: 468,
+        url: "https://bsky.app/profile/pixiveo.bsky.social/post/3lwi24peeis2r",
+        weight: 146.9,
+      },
     },
   },
   Nadette: {
